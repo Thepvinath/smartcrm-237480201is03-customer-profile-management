@@ -87,11 +87,9 @@ US4 – Phát hiện hồ sơ trùng — SHOULD
 Là nhân viên bán hàng, tôi muốn phát hiện các hồ sơ khách hàng có khả năng bị trùng để xác định những hồ sơ cần kiểm tra và gộp.
 US5 – So sánh hồ sơ trùng — SHOULD
 Là nhân viên bán hàng, tôi muốn so sánh thông tin giữa các hồ sơ có khả năng bị trùng để xác định chúng có thuộc cùng một khách hàng hay không.
-US6 – Chọn hồ sơ chính — SHOULD
-Là nhân viên bán hàng, tôi muốn chọn hồ sơ chính trước khi gộp để giữ lại hồ sơ phù hợp làm hồ sơ đại diện của khách hàng.
-US7 – Gộp hồ sơ khách hàng trùng — MUST
-Là nhân viên bán hàng, tôi muốn gộp các hồ sơ khách hàng trùng thành một hồ sơ duy nhất để giảm dữ liệu khách hàng trùng lặp trong hệ thống.
-US8 – Cập nhật hồ sơ sau khi gộp — COULD
+US6 – Chọn hồ sơ chính và gộp hồ sơ trùng — MUST
+Là nhân viên bán hàng, tôi muốn chọn hồ sơ chính và xác nhận gộp các hồ sơ trùng để hợp nhất thông tin khách hàng thành một hồ sơ duy nhất.
+US7 – Cập nhật hồ sơ sau khi gộp — COULD
 Là nhân viên bán hàng, tôi muốn cập nhật thông tin của hồ sơ sau khi gộp để bảo đảm hồ sơ khách hàng cuối cùng đầy đủ và chính xác.
 3.3. Acceptance Criteria
 US1 – Tạo hồ sơ khách hàng
@@ -113,7 +111,7 @@ AC2 – Không tìm thấy
 GIVEN không có hồ sơ phù hợp
 WHEN nhân viên thực hiện tra cứu
 THEN hệ thống hiển thị thông báo không tìm thấy hồ sơ.
-US7 – Gộp hồ sơ khách hàng trùng
+US6 – Chọn hồ sơ chính và gộp hồ sơ trùng
 AC1 – Gộp thành công
 GIVEN các hồ sơ đã được xác nhận để thực hiện gộp và đã chọn hồ sơ chính
 WHEN nhân viên xác nhận gộp
@@ -199,4 +197,4 @@ FR1 – Tạo hồ sơ khách hàng	US1	UC1	MUST	POST /api/customers
 FR2 – Tra cứu hồ sơ khách hàng	US2	UC2	MUST	GET /api/customers
 FR3 – Xem chi tiết hồ sơ	US3	UC3	COULD	GET /api/customers/{id}
 FR4 – Phát hiện hồ sơ có khả năng bị trùng	US4, US5	UC4	SHOULD	GET /api/customers/duplicates
-FR5 – Gộp hồ sơ khách hàng trùng	US6, US7, US8	UC5	MUST	POST /api/customers/merge
+FR5 – Gộp hồ sơ khách hàng trùng	US6, US7,   UC5	MUST	POST /api/customers/merge
